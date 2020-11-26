@@ -11,3 +11,6 @@ const userSchema = new Schema({
         require: true
     }
 });
+
+//Creates a collections users with the schema specified
+mongoose.model('users', userSchema);

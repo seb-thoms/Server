@@ -1,9 +1,15 @@
 const express = require('express');
-const routes = require('./routes/routes');
 const mongoose = require('mongoose');
+const bodyparser = require('body-parser');
+require('./models/user')
+const routes = require('./routes/routes');
 const keys = require('./config/keys');
 const app = express();
-require('./models/user')
+
+
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json());
+
 
 
 //CONNECTING TO MONGODB
